@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Investment Calculator" />
+    <title>Калькулятор інвестицій</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap">
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body class="bg-body-tertiary">
+    
+    <div class="container">
+        
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <span class="fs-4">Калькулятор інвестицій</span>
+        </header>
+        
+        <div class="col-md-12 inputs">
+            <form>
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <label for="startingBal"> Початковий внесок </label>
+                        <input type="number" class="form-control" id="startingBalance" value="10" min="1" max="999999">
+                    </div>
+
+                    <div class="col-sm-6 col-md-3">
+                        <label for="expectedReturn"> Відсоткова ставка %</label>
+                        <input type="number" class="form-control" id="expectedReturn" value="1" min="1" max="100">
+                    </div>
+
+                    <div class="col-sm-6 col-md-3">
+                        <label for="monthlyDep"> Місячний депозит </label>
+                        <input type="number" class="form-control" id="monthlyDeposit" value="10" min="1" max="999999">
+                    </div>
+
+                    <div class="col-sm-6 col-md-3">
+                        <label for="duration"> Тривалість (роки)</label>
+                        <input type="number" class="form-control" id="duration" value="5" min="1" max="100">
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-outline-secondary my-4" id="submit">
+                        Розрахунок
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-12 inputs mt-4" id="report-section">
+            <h2 class="text-center mb-3"> Діаграма дохідності </h2>
+            
+            <h5 class="chartDiv"></h5>
+            
+            <div id="chartContainer">
+                <canvas id="growthChart"></canvas>
+            </div>
+
+            <h3 class="text-center mb-3" id="totalValue"></h3>
+        </div>
+
+    </div>
+
+    <script src="chartjs.js"></script>
+    <script src="calculator.js"></script>
+    
+</body>
+</html>
+
